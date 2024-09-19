@@ -1,7 +1,11 @@
 import { Github, House, Laptop, Linkedin } from 'lucide-react'
 import photo from '../assets/personal-image.jpeg'
 
-export const Header = () => {
+type HeaderProps = {
+  renderPage: (page: string) => void
+}
+
+export const Header: React.FC<HeaderProps> = ({ renderPage }) => {
   return (
     <header className="border-b-2 container mx-auto border-zinc-800 h-24 py-4 flex justify-between items-center ">
       <div className="w-max h-12 gap-4 pl-1 pr-4 rounded-md flex justify-center items-center bg-zinc-800 text-white">
@@ -10,12 +14,13 @@ export const Header = () => {
         </div>
         <p className="flex font-semibold">Dionísio Benevides</p>
       </div>
-      <nav className="text-white w-1/2 font-dosis">
+      <nav className="text-white w-max font-dosis">
         <ul className="flex gap-4 items-center w-full justify-center h-full">
           <li className="flex gap-2">
             <button
               type="button"
               className="flex gap-2 p-1 rounded-sm hover:bg-zinc-700"
+              onClick={() => renderPage('home')}
             >
               <House size={20} />
               Home
@@ -25,6 +30,7 @@ export const Header = () => {
             <button
               type="button"
               className="flex gap-2 p-1 rounded-sm hover:bg-zinc-700"
+              onClick={() => renderPage('projetos')}
             >
               <Laptop size={20} />
               Projetos

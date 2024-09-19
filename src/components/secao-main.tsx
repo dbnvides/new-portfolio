@@ -10,8 +10,8 @@ import curriculo from '../assets/Dionísio Benevides dos Santos.pdf'
 
 export const SecaoMain = () => {
   return (
-    <section className="container w-screen h-[80vh]">
-      <div className=" w-full h-full flex justify-center items-center gap-10">
+    <section className="container h-[80vh]">
+      <div className=" w-full h-full flex justify-between items-center gap-20">
         <div className="w-[325px] border-2 shadow-zinc-400 shadow-inner h-[450px] rounded-tl-[110px] rounded-br-[110px]">
           <div className="flex flex-col justify-center items-center p-4 gap-2">
             <div className="w-14 h-14 rounded-full  border-zinc-400 border-2 overflow-hidden">
@@ -35,16 +35,16 @@ export const SecaoMain = () => {
                 Full-time / Freelancer
               </span>
               <ul className="flex gap-2 flex-wrap">
-                <li className="bg-zinc-900 w-max p-1 rounded-lg font-dosis font-semibold">
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
                   HTML
                 </li>
-                <li className="bg-zinc-900 w-max p-1 rounded-lg font-dosis font-semibold">
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
                   CSS3
                 </li>
-                <li className="bg-zinc-900 w-max p-1 rounded-lg font-dosis font-semibold">
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
                   Typescript
                 </li>
-                <li className="bg-zinc-900 w-max p-1 rounded-lg font-dosis font-semibold">
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
                   ReactJs
                 </li>
               </ul>
@@ -52,14 +52,14 @@ export const SecaoMain = () => {
               <a
                 href={curriculo}
                 download="Dionisio Benevides dos Santos.pdf"
-                className="flex mt-10 bg-white text-black font-dosis justify-between w-32 font-bold rounded-md p-2 self-center text-center"
+                className="flex mt-10 bg-white text-black font-dosis justify-between w-32 font-bold rounded-md p-2 self-center text-center hover:bg-zinc-950 hover:text-zinc-50"
               >
                 Download CV <Download />
               </a>
             </div>
           </div>
         </div>
-        <div className="w-3/5 flex-col flex h-[450px] gap-10">
+        <div className="w-2/5 flex-col flex h-[450px] gap-10">
           <h1 className="text-5xl font-dosis leading-tight">
             Olá, <br />
             Me chamo <b>Dionísio</b>,
@@ -74,7 +74,7 @@ export const SecaoMain = () => {
           <a
             href="https://www.linkedin.com/in/dionisiosantos/"
             target="_blank"
-            className="flex hover:bg-zinc-900 w-max p-2 rounded-md gap-4 mt-8 text-4xl font-dosis items-center"
+            className="flex border-zinc-900 border-2 hover:border-zinc-100 hover:bg-zinc-50 hover:text-zinc-950 w-max p-2 rounded-md gap-4 mt-8 text-4xl font-dosis items-center"
             rel="noreferrer"
           >
             Vamos conversar{' '}
@@ -82,6 +82,21 @@ export const SecaoMain = () => {
               <Linkedin size={40} />
             </span>{' '}
           </a>
+        </div>
+        <div className="w-[250px] border shadow-current h-[430px] rounded-3xl">
+          <div className="flex flex-col justify-center items-center p-4 gap-2">
+            <p className="font-dosis text-lg">Resumo</p>
+            <p className="font-dosis">
+              Tenho 26 anos e moro no interior de São Paulo. Sou apaixonado pelo
+              universo geek e, nos meus momentos livres, gosto de praticar
+              esportes, ir à academia, ler e explorar outras atividades.
+              Atualmente, trabalho como freelancer e possuo experiência na
+              criação de software para desktop e web. Um dos meus pontos fortes
+              é o trabalho em equipe, pois acredito que a colaboração nos leva
+              mais longe do que o trabalho individual. Caso queira conferir meu
+              currículo, basta clicar em download 🙂.
+            </p>
+          </div>
         </div>
       </div>
     </section>
