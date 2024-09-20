@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Header } from './components/header'
 import { SecaoMain } from './components/secao-main'
+import { Projetos } from './components/projetos'
 
 function App() {
   const [page, setPage] = useState('home')
@@ -11,7 +12,7 @@ function App() {
         return <SecaoMain />
 
       case 'projetos':
-        return <div>Projetos</div>
+        return <Projetos />
 
       default:
         return <div>teste</div>

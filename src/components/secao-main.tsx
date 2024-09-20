@@ -85,7 +85,7 @@ export const SecaoMain = () => {
         </div>
         <div className="w-[250px] border shadow-current h-[430px] rounded-3xl">
           <div className="flex flex-col justify-center items-center p-4 gap-2">
-            <p className="font-dosis text-lg">Resumo</p>
+            <p className="font-dosis text-lg">Sobre mim</p>
             <p className="font-dosis">
               Tenho 26 anos e moro no interior de São Paulo. Sou apaixonado pelo
               universo geek e, nos meus momentos livres, gosto de praticar
