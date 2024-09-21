@@ -15,6 +15,19 @@ export const Projetos = () => {
       name: 'MotorShop',
       descricao:
         'A aplicação consiste em um e-commerce voltado a compra e venda de automoveis, onde é possivel cadastrar dois tipos de usúarios, anunciante e comprador.',
+      repositorio:
+        'https://github.com/dbnvides/frontend-ecommerce-cars?tab=readme-ov-file',
+      deploy: 'https://frontend-ecommerce-cars.vercel.app/',
+      tecnologias: [
+        'TypeScript',
+        'Node',
+        'Reactjs',
+        'ExpressJs',
+        'TypeORM',
+        'PostgreSQL',
+        'TailwindCSS',
+        'Vite',
+      ],
     },
     {
       id: 2,
@@ -22,6 +35,15 @@ export const Projetos = () => {
       name: 'Junior Jobs',
       descricao:
         'A aplicação acima tem como objetivo facilitar essa busca, tanto para novos desenvolvedores quanto para empresas buscando novos colaboradores.',
+      repositorio: 'https://github.com/Project-Junior-Jobs/Junior-jobs',
+      deploy: 'https://junior-jobs-eta.vercel.app/',
+      tecnologias: [
+        'TypeScript',
+        'Reactjs',
+        'Styled-component',
+        'Json-server',
+        'YUP',
+      ],
     },
     {
       id: 3,
@@ -29,6 +51,20 @@ export const Projetos = () => {
       name: 'InOrbit',
       descricao:
         'A aplicação desenvolvida ajuda os usuários a monitorar suas metas semanais, promovendo uma execução mais eficiente e um controle melhor sobre suas atividades.',
+      repositorio: 'https://github.com/dbnvides/inorbit-web',
+      deploy: '',
+      tecnologias: [
+        'TypeScript',
+        'Node',
+        'PostgreSQL',
+        'Drizzle-orm',
+        'Fastify',
+        'Zod',
+        'Reactjs',
+        'TailwindCSS',
+        'Radix-ui',
+        'Vite',
+      ],
     },
     {
       id: 4,
@@ -36,6 +72,16 @@ export const Projetos = () => {
       name: 'Hamburgeria',
       descricao:
         'Aplicação voltada para compras de lanches e acompanhamentos, com sistemas de login e registro, sistema de carrinho e filtro para buscar os lanches, totalmente responsivo.',
+      repositorio: 'https://hamburgueria-2-0-azure.vercel.app/login',
+      deploy: 'https://hamburgueria-2-0-azure.vercel.app/login',
+      tecnologias: [
+        'TypeScript',
+        'Reactjs',
+        'Styled-component',
+        'ToastFy',
+        'Axios',
+        'YUP',
+      ],
     },
     {
       id: 5,
@@ -43,6 +89,17 @@ export const Projetos = () => {
       name: 'KenzieHub',
       descricao:
         'Aplicação voltada para desenvolvedores cujo o principal objetivo é anotar quais tecnologias voce tem conhecimento e colocar qual o grau de conhecimento.',
+      repositorio: 'https://github.com/dbnvides/kenzie-hub',
+      deploy: 'https://react-kenziehub.vercel.app/login',
+      tecnologias: [
+        'TypeScript',
+        'Reactjs',
+        'TailwindCSS',
+        'Framer-Motion',
+        'Styled-component',
+        'ToastFy',
+        'YUP',
+      ],
     },
   ]
 
@@ -68,7 +125,7 @@ export const Projetos = () => {
         {slides.map(slide => (
           <div
             key={slide.id}
-            className="min-w-full text-center flex gap-4 justify-around"
+            className="min-w-full text-center flex gap-10 justify-center"
           >
             <img
               src={slide.image}
@@ -76,23 +133,43 @@ export const Projetos = () => {
               className="w-max h-[70vh] object-contain border-2 rounded-md"
             />
             <div className="flex flex-col gap-10 justify-center">
-              <div className="border-2 h-max p-4 w-[300px] rounded-lg self-center shadow-xl">
-                <h2 className="text-2xl font-bold mt-4">{slide.name}</h2>
-                <p className="mt-2">{slide.descricao}</p>
-              </div>
-              <div className="flex justify-between p-2">
-                <button
-                  type="button"
-                  className="border-2 p-2 rounded-lg hover:bg-white hover:text-black font-dosis text-xl"
-                >
-                  Aplicação
-                </button>
-                <button
-                  type="button"
-                  className="border-2 p-2 rounded-lg hover:bg-white hover:text-black font-dosis text-xl"
-                >
-                  Código Fonte
-                </button>
+              <div className="flex flex-col gap-4">
+                <div className="border-2 h-max p-4 w-[300px] rounded-lg self-center shadow-xl">
+                  <h2 className="text-2xl font-bold mt-4">{slide.name}</h2>
+                  <p className="mt-2">{slide.descricao}</p>
+                </div>
+                <div className="border-2 h-max p-4 w-[300px] rounded-lg self-center shadow-xl gap-5 flex flex-col">
+                  <h2 className="text-2xl font-bold mt-4">
+                    Principais Tecnolgias
+                  </h2>
+                  <ul className="flex gap-2 flex-wrap">
+                    {slide.tecnologias.map((value, index) => (
+                      <li
+                        key={index}
+                        className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold"
+                      >
+                        {value}
+                      </li>
+                    ))}
+                  </ul>
+                </div>{' '}
+                <div className="flex justify-between">
+                  {slide.deploy && (
+                    <a
+                      href={slide.deploy}
+                      className="border-2 p-2 rounded-lg hover:bg-white hover:text-black font-dosis text-xl"
+                    >
+                      Aplicação
+                    </a>
+                  )}
+
+                  <a
+                    href={slide.repositorio}
+                    className="border-2 p-2 rounded-lg hover:bg-white hover:text-black font-dosis text-xl"
+                  >
+                    Código Fonte
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -114,20 +191,6 @@ export const Projetos = () => {
       >
         &#10095;
       </button>
-
-      {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {slides.map((_, idx) => (
-          <button
-            type="button"
-            key={idx}
-            className={`h-2 w-2 rounded-full ${
-              idx === currentSlide ? 'bg-gray-800' : 'bg-gray-400'
-            }`}
-            onClick={() => setCurrentSlide(idx)}
-          />
-        ))}
-      </div>
     </div>
   )
 }
