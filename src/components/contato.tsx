@@ -11,6 +11,7 @@ const contataMe = z.object({
 })
 
 export type ContateMeForm = z.infer<typeof contataMe>
+
 export const Contato = () => {
   const { register, handleSubmit, reset } = useForm<ContateMeForm>({
     resolver: zodResolver(contataMe),
@@ -19,18 +20,22 @@ export const Contato = () => {
   const onSubmit = (data: ContateMeForm) => {
     const { nome, empresa, text } = data
 
+    // Certifique-se de que `empresa` seja uma string ou um valor vazio
+    const empresaValue = empresa || ''
+
     // Mensagem personalizada para o WhatsApp
-    const message = `Olá, sou ${nome}, da empresa ${empresa}. \n\n${text}`
+    const message = `Olá, sou ${nome}, da empresa ${empresaValue}. \n\n${text}`
 
     // Formatação da URL do WhatsApp
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=+5512981326766&text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=+5512981326766&text=${encodeURIComponent(
+      message
+    )}`
 
     // Redireciona o usuário para o WhatsApp com a mensagem pronta
     window.open(whatsappUrl, '_blank')
 
     reset()
   }
-
   return (
     <div className="relative w-[80vw]  mx-auto overflow-hidden">
       <h1 className="text-center font-dosis text-3xl mb-10">
