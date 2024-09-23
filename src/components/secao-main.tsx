@@ -12,7 +12,7 @@ export const SecaoMain = () => {
   return (
     <section className="container h-[80vh]">
       <div className=" w-full h-full flex justify-between items-center gap-20">
-        <div className="w-[325px] border-2 shadow-zinc-400 shadow-inner h-[450px] rounded-tl-[110px] rounded-br-[110px]">
+        <div className="w-[325px] border-2 shadow-zinc-400 shadow-inner h-[470px] rounded-tl-[110px] rounded-br-[110px]">
           <div className="flex flex-col justify-center items-center p-4 gap-2">
             <div className="w-14 h-14 rounded-full  border-zinc-400 border-2 overflow-hidden">
               <img src={profile} alt="foto de perfil" />
@@ -21,8 +21,8 @@ export const SecaoMain = () => {
             <span className="font-dosis text-zinc-300">
               Full-Stack Developer
             </span>
-            <div className="flex flex-col mt-2 gap-4">
-              <span className="flex gap-2 items-center justify-center font-dosis">
+            <div className="flex flex-col mt-2 gap-4 px-4">
+              <span className="flex gap-2 items-center font-dosis">
                 <Mail />
                 contatodionisiobenevides@gmail.com
               </span>
@@ -47,12 +47,24 @@ export const SecaoMain = () => {
                 <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
                   ReactJs
                 </li>
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
+                  NodeJs
+                </li>
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
+                  ExpressJs
+                </li>
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
+                  Python
+                </li>
+                <li className="bg-zinc-800 w-max p-1 rounded-lg font-dosis font-semibold">
+                  Django-RestFrameWork
+                </li>{' '}
               </ul>
 
               <a
                 href={curriculo}
                 download="Dionisio Benevides dos Santos.pdf"
-                className="flex mt-10 bg-white text-black font-dosis justify-between w-32 font-bold rounded-md p-2 self-center text-center hover:bg-zinc-950 hover:text-zinc-50"
+                className="flex mt-1 bg-white text-black font-dosis justify-between w-32 font-bold rounded-md p-2 self-center text-center hover:bg-zinc-950 hover:text-zinc-50"
               >
                 Download CV <Download />
               </a>

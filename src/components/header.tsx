@@ -1,4 +1,4 @@
-import { Github, House, Laptop, Linkedin } from 'lucide-react'
+import { Github, House, Laptop, Linkedin, SquareUserRound } from 'lucide-react'
 import photo from '../assets/personal-image.jpeg'
 
 type HeaderProps = {
@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ renderPage }) => {
           <li className="flex gap-2">
             <button
               type="button"
-              className="flex gap-2 p-1 rounded-sm hover:bg-zinc-700"
+              className="flex items-center gap-2 rounded-sm border-b-2 border-zinc-950 hover:border-zinc-50"
               onClick={() => renderPage('home')}
             >
               <House size={20} />
@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ renderPage }) => {
           <li className="flex gap-2">
             <button
               type="button"
-              className="flex gap-2 p-1 rounded-sm hover:bg-zinc-700"
+              className="flex items-center gap-2 rounded-sm border-b-2 border-zinc-950 hover:border-zinc-50"
               onClick={() => renderPage('projetos')}
             >
               <Laptop size={20} />
@@ -37,10 +37,20 @@ export const Header: React.FC<HeaderProps> = ({ renderPage }) => {
             </button>
           </li>{' '}
           <li className="flex gap-2">
+            <button
+              type="button"
+              className="flex items-center gap-2 rounded-sm border-b-2 border-zinc-950 hover:border-zinc-50"
+              onClick={() => renderPage('contato')}
+            >
+              <SquareUserRound size={20} />
+              Contate-me
+            </button>
+          </li>
+          <li className="flex gap-2">
             <a
               href="https://github.com/dbnvides"
               target="_blank"
-              className="flex gap-2 p-1 rounded-sm hover:bg-zinc-700"
+              className="flex items-center gap-2 rounded-sm border-b-2 border-zinc-950 hover:border-zinc-50"
               rel="noreferrer"
             >
               <Github size={20} />
@@ -51,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({ renderPage }) => {
             <a
               href="https://www.linkedin.com/in/dionisiosantos/"
               target="_blank"
-              className="flex gap-2 p-1 rounded-sm hover:bg-zinc-700"
+              className="flex items-center gap-2 rounded-sm border-b-2 border-zinc-950 hover:border-zinc-50"
               rel="noreferrer"
             >
               <Linkedin size={20} />
