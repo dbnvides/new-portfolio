@@ -7,7 +7,7 @@ const contataMe = z.object({
   nome: z.string().min(3, 'Informe seu nome corretamente'),
   empresa: z.string(),
   email: z.string().email(),
-  text: z.string(),
+  messageSend: z.string(),
 })
 
 export type ContateMeForm = z.infer<typeof contataMe>
@@ -18,24 +18,20 @@ export const Contato = () => {
   })
 
   const onSubmit = (data: ContateMeForm) => {
-    const { nome, empresa, text } = data
-
-    // Certifique-se de que `empresa` seja uma string ou um valor vazio
-    const empresaValue = empresa || ''
+    const { nome, empresa, messageSend } = data
 
     // Mensagem personalizada para o WhatsApp
-    const message = `Olá, sou ${nome}, da empresa ${empresaValue}. \n\n${text}`
+    const message = `Olá, sou ${nome}, da empresa ${empresa}. \n\n${messageSend}`
 
     // Formatação da URL do WhatsApp
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=+5512981326766&text=${encodeURIComponent(
-      message
-    )}`
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=+5512981326766&text=${encodeURIComponent(message)}`
 
     // Redireciona o usuário para o WhatsApp com a mensagem pronta
     window.open(whatsappUrl, '_blank')
 
     reset()
   }
+
   return (
     <div className="relative w-[80vw]  mx-auto overflow-hidden">
       <h1 className="text-center font-dosis text-3xl mb-10">
@@ -104,10 +100,10 @@ export const Contato = () => {
           </label>
           <textarea
             id="message"
-            rows="4"
+            rows={4}
             className="block p-2.5 w-full text-sm text-zinc-50 bg-zinc-950 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Deixe um comentário"
-            {...register('text')}
+            {...register('messageSend')}
           />
         </div>
         <button
