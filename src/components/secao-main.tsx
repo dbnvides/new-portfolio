@@ -1,10 +1,4 @@
-import {
-  BriefcaseBusiness,
-  Download,
-  Linkedin,
-  Mail,
-  MapPin,
-} from 'lucide-react'
+import { BriefcaseBusiness, Download, Mail, MapPin } from 'lucide-react'
 import profile from '../assets/personal-image.jpeg'
 import curriculo from '../assets/Dionísio Benevides dos Santos.pdf'
 

@@ -1,13 +1,4 @@
-export const Card = ({
-  id,
-  name,
-  deploy,
-  descricao,
-  image,
-  repositorio,
-  tecnologias,
-  modal,
-}: any) => {
+export const Card = ({ name, image, modal }: any) => {
   return (
     // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
     <li
