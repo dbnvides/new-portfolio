@@ -9,9 +9,9 @@ export const Projetos = () => {
   return (
     <>
       <ModalViewProjects />
-      <section className="w-full min-h-[80vh] p-2 flex flex-col gap-10 ">
+      <section className="w-full min-h-auto p-2 flex flex-col gap-10 items-center overflow-hidden">
         <h1 className="text-center font-dosis text-5xl">Projetos</h1>
-        <ul className="flex flex-wrap gap-4 p-2 justify-center">
+        <ul className="flex flex-wrap gap-4 p-2 justify-center max-w-[70%]">
           {slides.map(item => (
             <Card
               key={item.id}

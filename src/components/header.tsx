@@ -18,18 +18,13 @@ export const Header: React.FC<HeaderProps> = ({ renderPage }) => {
         </div>
         <p className="flex font-semibold">Dionísio Benevides</p>
       </div>
-
-      {/* Botão para abrir/fechar o menu em telas menores */}
       <button
         type="button"
         className="md:hidden text-white absolute right-10 text-lg bg-zinc-800 rounded-md p-2 px-2 w-10"
         onClick={() => setIsNavOpen(!isNavOpen)}
       >
-        {/* Ícone de menu ou fechar baseado no estado */}
         {isNavOpen ? '✖️' : '☰'}
       </button>
-
-      {/* Navegação */}
       <nav
         className={`${
           isNavOpen ? 'block' : 'hidden'
@@ -72,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({ renderPage }) => {
               }}
             >
               <SquareUserRound size={20} />
-              Contate-me
+              Contatar
             </button>
           </li>
           <li className="flex gap-2">
