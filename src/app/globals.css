@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-geist), ui-sans-serif, sans-serif;
+
+  --color-accent: oklch(0.83 0.14 168);
+  --color-accent-strong: oklch(0.74 0.15 168);
+  --color-accent-soft: oklch(0.83 0.14 168 / 0.12);
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-300 antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-zinc-950;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Sections fade in while scrolling, where the browser supports scroll-driven animations. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Project filter: pure CSS, no JS. One rule per ProjectCategory. */
+.project-filter:has(input[value="fullstack"]:checked) [data-category]:not([data-category="fullstack"]),
+.project-filter:has(input[value="frontend"]:checked) [data-category]:not([data-category="frontend"]),
+.project-filter:has(input[value="sap"]:checked) [data-category]:not([data-category="sap"]),
+.project-filter:has(input[value="ia"]:checked) [data-category]:not([data-category="ia"]),
+.project-filter:has(input[value="landing"]:checked) [data-category]:not([data-category="landing"]) {
+  display: none;
+}
